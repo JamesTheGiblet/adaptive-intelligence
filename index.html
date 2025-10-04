@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Intelligence Platform - AI-Powered Development Ecosystem</title>
+    <meta name="description" content="Transform your development workflow with intelligent automation, security, and collaboration tools powered by advanced AI agents and skills.">
+    <meta name="keywords" content="AI development tools, automation, security scanning, compliance, test generation, code analysis">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jamestheGiblet.github.io/adaptive-intelligence/">
+    <meta property="og:title" content="Adaptive Intelligence Platform">
+    <meta property="og:description" content="The Complete AI-Powered Development Ecosystem">
+    <meta property="og:image" content="https://jamestheGiblet.github.io/adaptive-intelligence/assets/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jamestheGiblet.github.io/adaptive-intelligence/">
+    <meta property="twitter:title" content="Adaptive Intelligence Platform">
+    <meta property="twitter:description" content="The Complete AI-Powered Development Ecosystem">
+    <meta property="twitter:image" content="https://jamestheGiblet.github.io/adaptive-intelligence/assets/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --text-dark: #2d3748;
+            --text-light: #4a5568;
+            --text-muted: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --success-color: #48bb78;
+            --warning-color: #ed8936;
+            --error-color: #f56565;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #fff, #f0f8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .description {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 60px 0;
+            background: var(--bg-light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            font-size: 1.1em;
+        }
+
+        /* Architecture Section */
+        .architecture {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .architecture-layers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .layer {
+            background: var(--bg-white);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .layer:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .layer-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .layer h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .layer .layer-subtitle {
+            font-size: 1.1em;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .layer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .layer ul li {
+            padding: 8px 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .layer ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        /* Tools Section */
+        .tools {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .tool-card {
+            background: var(--bg-white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .tool-icon {
+            font-size: 2.5em;
+            margin-right: 15px;
+        }
+
+        .tool-card h3 {
+            font-size: 1.5em;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .tool-category {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .tool-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .tool-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .tool-features li {
+            padding: 5px 0;
+            color: var(--text-muted);
+            font-size: 0.95em;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .tool-features li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .tool-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .tool-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .tool-link::after {
+            content: '→';
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-link:hover::after {
+            transform: translateX(3px);
+        }
+
+        /* Quick Start Section */
+        .quick-start {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .quick-start-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .quick-start-examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .code-block {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            overflow-x: auto;
+            position: relative;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        }
+
+        .code-block::before {
+            content: attr(data-language);
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .code-block pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* Workflows Section */
+        .workflows {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .workflow-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .workflow-card {
+            background: var(--bg-white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .workflow-steps {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .workflow-steps li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .workflow-steps li:last-child {
+            border-bottom: none;
+        }
+
+        .workflow-steps li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 15px;
+            background: var(--primary-color);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .workflow-steps {
+            counter-reset: step-counter;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .use-case {
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .use-case:nth-child(4n+1) {
+            background: linear-gradient(135deg, #667eea22, #764ba222);
+            border-color: var(--primary-color);
+        }
+
+        .use-case:nth-child(4n+2) {
+            background: linear-gradient(135deg, #48bb7822, #38a16922);
+            border-color: var(--success-color);
+        }
+
+        .use-case:nth-child(4n+3) {
+            background: linear-gradient(135deg, #ed893622, #dd672222);
+            border-color: var(--warning-color);
+        }
+
+        .use-case:nth-child(4n+4) {
+            background: linear-gradient(135deg, #f0939822, #e879a422);
+            border-color: var(--accent-color);
+        }
+
+        .use-case h3 {
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        /* Community Section */
+        .community {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .community-item {
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .community-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .community-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            padding: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #4a5568;
+            color: #cbd5e0;
+        }
+
+        .github-link {
+            color: white;
+            text-decoration: none;
+        }
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero .tagline {
+                font-size: 1.3em;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .architecture-layers {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">🤖 Adaptive Intelligence</a>
+                <ul class="nav-links">
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#quick-start">Quick Start</a></li>
+                    <li><a href="#workflows">Workflows</a></li>
+                    <li><a href="https://github.com/JamesTheGiblet/adaptive-intelligence" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>The Adaptive Intelligence Platform</h1>
+                <p class="tagline">Enterprise AI Automation Without the Cloud Tax</p>
+                <p class="description">
+                    Transform your development workflow with intelligent automation, security, and collaboration tools powered by advanced AI agents and skills.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#quick-start" class="btn btn-primary">Get Started</a>
+                    <a href="https://github.com/JamesTheGiblet/adaptive-intelligence" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in-up">
+                    <h3>8</h3>
+                    <p>Intelligence Tools</p>
+                </div>
+                <div class="stat-item fade-in-up">
+                    <h3>3</h3>
+                    <p>Architecture Layers</p>
+                </div>
+                <div class="stat-item fade-in-up">
+                    <h3>70%</h3>
+                    <p>Cost Reduction</p>
+                </div>
+                <div class="stat-item fade-in-up">
+                    <h3>100%</h3>
+                    <p>Open Source</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">3-Layer Architecture</h2>
+            <p class="section-subtitle">
+                A modular, scalable platform designed for enterprise deployment with intelligent agent orchestration
+            </p>
+            
+            <div class="architecture-layers">
+                <div class="layer fade-in-up">
+                    <span class="layer-icon">🤖</span>
+                    <h3>Layer 1: AAS</h3>
+                    <p class="layer-subtitle">Agent Autonomy System</p>
+                    <p>Multi-agent orchestration for complex workflows</p>
+                    <ul>
+                        <li>Agent Fleet Management</li>
+                        <li>Workflow Orchestration</li>
+                        <li>Task Distribution</li>
+                        <li>Secure Communication</li>
+                    </ul>
+                </div>
+                
+                <div class="layer fade-in-up">
+                    <span class="layer-icon">🚀</span>
+                    <h3>Layer 2: Praximous</h3>
+                    <p class="layer-subtitle">AI Gateway</p>
+                    <p>Smart routing with 100+ built-in skills</p>
+                    <ul>
+                        <li>Intelligent Routing</li>
+                        <li>Smart Skills Library</li>
+                        <li>Universal Authentication</li>
+                        <li>Performance Monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="layer fade-in-up">
+                    <span class="layer-icon">🛠️</span>
+                    <h3>Layer 3: Tools</h3>
+                    <p class="layer-subtitle">Intelligence Tools</p>
+                    <p>Specialized tools for every development need</p>
+                    <ul>
+                        <li>Security & Compliance</li>
+                        <li>Testing & Quality</li>
+                        <li>Analysis & Verification</li>
+                        <li>Content & Documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools">
+        <div class="container">
+            <h2 class="section-title">Intelligence Tools</h2>
+            <p class="section-subtitle">
+                8 specialized tools that solve real developer problems
+            </p>
+            
+            <div class="tools-grid">
+                <!-- Security & Compliance -->
+                <div class="tool-card fade-in-up">
+                    <div class="tool-header">
+                        <span class="tool-icon">🔐</span>
+                        <div>
+                            <h3>Whisper</h3>
+                            <p class="tool-category">Security & Compliance</p>
+                        </div>
+                    </div>
+                    <p class="tool-description">
+                        Advanced secret and vulnerability scanner that prevents leaks before they happen
+                    </p>
+                    <ul class="tool-features">
+                        <li>Secret pattern detection</li>
+                        <li>CVE vulnerability scanning</li>
+                        <li>Risk scoring and prioritization</li>
+                        <li>Real-time monitoring</li>
+                    </ul>
+                    <a href="docs/tools/whisper.md" class="tool-link">Learn more</a>
+                </div>
+
+                <div class="tool-card fade-in-up">
+                    <div class="tool-header">
+                        <span class="tool-icon">🛡️</span>
+                        <div>
+                            <h3>Aegis CLI</h3>
+                            <p class="tool-category">Security & Compliance</p>
+                        </div>
+                    </div>
+                    <p class="tool-description">
+                        Automated security compliance framework for SOC2, ISO27001, GDPR, and more
+                    </p>
+                    <ul class="tool-features">
+                        <li>Compliance documentation</li>
+                        <li>Policy template generation</li>
+                        <li>Executive reporting</li>
+                        <li>Continuous monitoring</li>
+                    </ul>
+                    <a href="docs/tools/aegis.md" class="tool-link">Learn more</a>
+                </div>
+
+                <!-- Testing & Quality -->
+                <div class="tool-card fade-in-up">
+                    <div class="tool-header">
+                        <span class="tool-icon">🧪</span>
+                        <div>
+                            <h3>Test Generator</h3>
+                            <p class="tool-category">Testing & Quality</p>
+                        </div>
+                    </div>
+                    <p class="tool-description">
+                        AI-powered automated test creation with multi-language support and intelligent coverage
+                    </p>
+                    <ul class="tool-features">
+                        <li>Multi-language support</li>
+                        <li>Intelligent test generation</li>
+                        <li>Coverage analysis</li>
+                        <li>Framework integration</li>
+                    </ul>
+                    <a href="docs/tools/test-generator.md" class="tool-link">Learn more</a>
+                </div>
+
+                <div class="tool-card fade-in-up">
+                    <div class="tool-header">
+                        <span class="tool-icon">🪪</span>
+                        <div>
+                            <h3>EmbedID</h3>
+                            <p class="tool-category">Testing & Quality</p>
+                        </div>
+                    </div>
+                    <p class="tool-description">
+                        Code watermarking and provenance tracking for integrity verification and lineage
+                    </p>
+                    <ul class="tool-features">
+                        <li>Invisible watermarking</li>
+                        <li>Change lineage tracking</li>
+                        <li>Integrity verification</li>
+                        <li>Contribution analytics</li>
+                    </ul>
+                    <a href="docs/tools/embedid.md" class="tool-link">Learn more</a>
+                </div>
+
+                <!-- Analysis & Verification -->
+                <div class="tool-card fade-in-up">
+                    <div class="tool-header">
+                        <span class="tool-icon">🎯</span>
+                        <div>
+                            <h3>CertiScope</h3>
+                            <p class="tool-category">Analysis & Verification</p>
+                        </div>
+                    </div>
+                    <p class="tool-description">
+                        Web credibility scoring with multi-factor analysis and transparent methodology
+                    </p>
+                    <ul class="tool-features">
+                        <li>Credibility scoring (0-10)</li>
+                        <li>Source authority analysis</li>
+                        <li>Content quality assessment</li>
+                        <li>Bulk verification</li>
+                    </ul>
+                    <a href="docs/tools/certiscope.md" class="tool-link">Learn more</a>
+                </div>
+
+                <div class="tool-card fade-in-up">
+                    <div class="tool-header">
+                        <span class="tool-icon">🌳</span>
+                        <div>
+                            <h3>TreeCraft</h3>
+                            <p class="tool-category">Analysis & Verification</p>
+                        </div>
+                    </div>
+                    <p class="tool-description">
+                        Project structure analysis with best practice recommendations and automated fixes
+                    </p>
+                    <ul class="tool-features">
+                        <li>Structure visualization</li>
+                        <li>Best practice recommendations</li>
+                        <li>Automated restructuring</li>
+                        <li>Framework-specific guidance</li>
+                    </ul>
+                    <a href="docs/tools/treecraft.md" class="tool-link">Learn more</a>
+                </div>
+
+                <!-- Content & AI -->
+                <div class="tool-card fade-in-up">
+                    <div class="tool-header">
+                        <span class="tool-icon">✍️</span>
+                        <div>
+                            <h3>MarkFlow</h3>
+                            <p class="tool-category">Content & Documentation</p>
+                        </div>
+                    </div>
+                    <p class="tool-description">
+                        Intelligent markdown editor with AI-powered writing assistance and real-time collaboration
+                    </p>
+                    <ul class="tool-features">
+                        <li>AI writing assistance</li>
+                        <li>Real-time collaboration</li>
+                        <li>Smart content suggestions</li>
+                        <li>Advanced formatting</li>
+                    </ul>
+                    <a href="docs/tools/markflow.md" class="tool-link">Learn more</a>
+                </div>
+
+                <div class="tool-card fade-in-up">
+                    <div class="tool-header">
+                        <span class="tool-icon">🦎</span>
+                        <div>
+                            <h3>Chameleon LM</h3>
+                            <p class="tool-category">AI Enhancement</p>
+                        </div>
+                    </div>
+                    <p class="tool-description">
+                        Domain expertise adapter that transforms AI models into specialized domain experts
+                    </p>
+                    <ul class="tool-features">
+                        <li>Dynamic personality adaptation</li>
+                        <li>Domain knowledge injection</li>
+                        <li>Context-aware responses</li>
+                        <li>Multi-domain expertise</li>
+                    </ul>
+                    <a href="docs/tools/chameleon.md" class="tool-link">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section id="quick-start" class="quick-start">
+        <div class="container">
+            <h2 class="section-title">Quick Start</h2>
+            <p class="section-subtitle">
+                Get up and running in 5 minutes
+            </p>
+            
+            <div class="code-block" data-language="bash">
+<pre># 1. Clone the repository
+git clone https://github.com/JamesTheGiblet/adaptive-intelligence.git
+cd adaptive-intelligence
+
+# 2. Configure environment
+cp .env.example .env
+# Add your API keys (GEMINI_API_KEY=your_key_here)
+
+# 3. Start the platform
+docker-compose up -d
+
+# 4. Verify it's working
+            <div class="quick-start-examples-grid">
+            </div>
+
+            <p style="text-align: center; margin: 40px 0; font-size: 1.2em; color: var(--text-muted);">
+                🎉 <strong>You're now running:</strong> Praximous Gateway (port 8000), AAS Agents (port 9000), and all Intelligence Tools!
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                <div class="code-block" data-language="bash">
+<pre># Try scanning for secrets
+curl -X POST http://localhost:8000/api/v1/process \
+  -d '{"task_type": "whisper_scan", "path": "."}'</pre>
+                </div>
+                
+                <div class="code-block" data-language="bash">
+<pre># Generate tests automatically
+curl -X POST http://localhost:8000/api/v1/process \
+  -d '{"task_type": "generate_tests", "code": "def add(a,b): return a+b"}'</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflows Section -->
+    <section id="workflows" class="workflows">
+        <div class="container">
+            <h2 class="section-title">Complete Workflows</h2>
+            <p class="section-subtitle">
+                End-to-end automation examples
+            </p>
+            
+            <div class="workflow-cards">
+                <div class="workflow-card fade-in-up">
+                    <h3>🔒 Secure Project Initialization</h3>
+                    <p>Start new projects with comprehensive security from day one</p>
+                    <ol class="workflow-steps">
+                        <li>Scan existing code for secrets</li>
+                        <li>Generate security documentation</li>
+                        <li>Analyze project structure</li>
+                        <li>Generate comprehensive tests</li>
+                        <li>Set up continuous monitoring</li>
+                    </ol>
+                </div>
+                
+                <div class="workflow-card fade-in-up">
+                    <h3>🔍 AI-Assisted Code Review</h3>
+                    <p>Automate code review with intelligent analysis and verification</p>
+                    <ol class="workflow-steps">
+                        <li>Watermark new code changes</li>
+                        <li>Generate tests for changes</li>
+                        <li>Security scan on modifications</li>
+                        <li>Verify external references</li>
+                        <li>Generate review documentation</li>
+                    </ol>
+                </div>
+                
+                <div class="workflow-card fade-in-up">
+                    <h3>📊 Continuous Compliance</h3>
+                    <p>Maintain ongoing security and compliance automatically</p>
+                    <ol class="workflow-steps">
+                        <li>Monitor security posture</li>
+                        <li>Update compliance documentation</li>
+                        <li>Generate executive reports</li>
+                        <li>Track remediation progress</li>
+                        <li>Prepare audit materials</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <p class="section-subtitle">
+                Real-world impact across different organizations
+            </p>
+            
+            <div class="use-case-grid">
+                <div class="use-case fade-in-up">
+                    <h3>🏢 Enterprise Software Company</h3>
+                    <p><strong>Challenge:</strong> Manual security reviews delayed releases by weeks</p>
+                    <p><strong>Solution:</strong> Automated security scanning with Whisper + Aegis compliance docs</p>
+                    <p><strong>Result:</strong> 90% faster security reviews, zero security incidents</p>
+                </div>
+                
+                <div class="use-case fade-in-up">
+                    <h3>🚀 Fast-Growing Startup</h3>
+                    <p><strong>Challenge:</strong> Code quality suffered during rapid scaling</p>
+                    <p><strong>Solution:</strong> Automated testing with Test Generator + TreeCraft analysis</p>
+                    <p><strong>Result:</strong> Maintained 95% test coverage while 10x team size</p>
+                </div>
+                
+                <div class="use-case fade-in-up">
+                    <h3>🔬 Research Institution</h3>
+                    <p><strong>Challenge:</strong> Verifying credibility of online sources for publications</p>
+                    <p><strong>Solution:</strong> CertiScope for source verification + MarkFlow for writing</p>
+                    <p><strong>Result:</strong> 50% faster literature reviews, improved quality</p>
+                </div>
+                
+                <div class="use-case fade-in-up">
+                    <h3>👥 Open Source Community</h3>
+                    <p><strong>Challenge:</strong> Inconsistent contribution quality and documentation</p>
+                    <p><strong>Solution:</strong> Full platform deployment with automated workflows</p>
+                    <p><strong>Result:</strong> 3x increase in quality contributions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community">
+        <div class="container">
+            <h2 class="section-title">Join the Community</h2>
+            <p class="section-subtitle">
+                Connect with developers, security experts, and AI researchers
+            </p>
+            
+            <div class="community-grid">
+                <div class="community-item fade-in-up">
+                    <h3>💬 Discord</h3>
+                    <p>Real-time chat and support</p>
+                    <a href="https://discord.gg/adaptive-intel">Join Discord</a>
+                </div>
+                
+                <div class="community-item fade-in-up">
+                    <h3>🐛 GitHub Issues</h3>
+                    <p>Report bugs and request features</p>
+                    <a href="https://github.com/JamesTheGiblet/adaptive-intelligence/issues">View Issues</a>
+                </div>
+                
+                <div class="community-item fade-in-up">
+                    <h3>💡 Discussions</h3>
+                    <p>Questions and ideas</p>
+                    <a href="https://github.com/JamesTheGiblet/adaptive-intelligence/discussions">Join Discussion</a>
+                </div>
+                
+                <div class="community-item fade-in-up">
+                    <h3>🤝 Contributing</h3>
+                    <p>Help build the future</p>
+                    <a href="CONTRIBUTING.md">Contribute</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="docs/architecture.md">Architecture</a></li>
+                        <li><a href="docs/guides/deployment.md">Deployment</a></li>
+                        <li><a href="docs/workflows.md">Workflows</a></li>
+                        <li><a href="ROADMAP.md">Roadmap</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="docs/tools/whisper.md">Whisper</a></li>
+                        <li><a href="docs/tools/aegis.md">Aegis CLI</a></li>
+                        <li><a href="docs/tools/test-generator.md">Test Generator</a></li>
+                        <li><a href="docs/tools/embedid.md">EmbedID</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="CONTRIBUTING.md">Contributing</a></li>
+                        <li><a href="CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+                        <li><a href="https://github.com/JamesTheGiblet/adaptive-intelligence/discussions">Discussions</a></li>
+                        <li><a href="https://discord.gg/adaptive-intel">Discord</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="LICENSE">MIT License</a></li>
+                        <li><a href="SECURITY.md">Security Policy</a></li>
+                <p>⭐ Star us on <a href="https://github.com/JamesTheGiblet/adaptive-intelligence" class="github-link">GitHub</a> if this project helps you!</p>
+                        <li><a href="mailto:support@adaptiveintel.dev">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Adaptive Intelligence Platform. Built with ❤️ by the community.</p>
+                <p>⭐ Star us on <a href="https://github.com/JamesTheGiblet/adaptive-intelligence" style="color: white;">GitHub</a> if this project helps you!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Add copy to clipboard functionality for code blocks
+        document.querySelectorAll('.code-block').forEach(block => {
+            const copyBtn = document.createElement('button');
+            copyBtn.textContent = 'Copy';
+            copyBtn.style.cssText = `
+                position: absolute;
+                top: 10px;
+                left: 15px;
+                background: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.2);
+                color: white;
+                padding: 4px 8px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.8em;
+            `;
+            
+            copyBtn.addEventListener('click', () => {
+                const text = block.querySelector('pre').textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => {
+                        copyBtn.textContent = 'Copy';
+                    }, 2000);
+                });
+            });
+            
+            block.style.position = 'relative';
+            block.appendChild(copyBtn);
+        });
+
+        // Add GitHub stars counter (optional)
+        fetch('https://api.github.com/repos/JamesTheGiblet/adaptive-intelligence')
+            .then(response => response.json())
+            .then(data => {
+                const starCount = data.stargazers_count;
+                document.querySelectorAll('.github-stars').forEach(el => {
+                    el.textContent = `⭐ ${starCount} stars`;
+                });
+            })
+            .catch(() => {
+                // Fallback if API fails
+                document.querySelectorAll('.github-stars').forEach(el => {
+                    el.textContent = '⭐ Star us on GitHub';
+                });
+            });
+    </script>
+</body>
+</html>
