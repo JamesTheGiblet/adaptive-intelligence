@@ -1,4 +1,5 @@
 The Adaptive Intelligence Platform
+
 An AI Automation Framework for Developers
 > "I built these tools because I was tired of the same problems breaking my workflow. Then I realized I'd accidentally built an entire platform."
 > 
@@ -126,7 +127,7 @@ This project is in active development. Here's the current status and where it's 
 🚀 Future Plans
  * 🤖 Smarter AI: Improving the built-in skills and agent capabilities.
  * 🌐 Better Integrations: Building more seamless connections with popular dev tools.
- * COMMUNITY Feedback: Prioritizing features requested by the community.
+ * 👥 Community Feedback: Prioritizing features requested by the community.
 ➡️ Full Roadmap | Suggest a Feature
 🆘 Support & Community
 This is a community-supported project. I'll do my best to help, but there are no official support guarantees or SLAs.
